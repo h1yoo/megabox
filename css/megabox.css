@@ -1028,7 +1028,7 @@ div.search-link {
 }
 #main_section02 .grand-open .tit {
     position: absolute;
-    left: 230px;
+    left: 30px;
     top: 50px;
     color: #fff;
     line-height: 1.1;
@@ -1049,6 +1049,7 @@ div.search-link {
 #main_section02 .grand-open .open-cont {
     padding: 60px 0 0 373px;
     width: 1100px;
+    position: relative;
     margin: 0 auto;
 }
 #main_section02 .grand-open .open-cont > p {
