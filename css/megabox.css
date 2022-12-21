@@ -693,6 +693,7 @@ ol.list img.poster {
     overflow: hidden;
     text-align: justify;
     font-weight: 400;
+    font-size: 0.95em;
     font-family: '나눔고딕';
 }
 .main-movie-list > ol li .wrap .score {
