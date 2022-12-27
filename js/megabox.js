@@ -1,22 +1,30 @@
 $(document).ready(function(){
     //메뉴 네비게이션
-    $('#gnb>ul>li>a').mouseenter(function(){
+    $('#gnb>ul>li>a:not(li.depth1-5 a)').mouseenter(function(){
+        //위에 처럼 :not(selector)  이렇게 해도 되고, $().not('li.depth1-5 a') 해도 됨!
         //$('div.gnb-depth2 ul').stop().slideDown();
         $(this).siblings().children("ul").stop().slideDown("fast");
+        $(this).css("border-bottom", "3px solid white");
+        $('#gnb div.gnb-depth2').css("background", "linear-gradient(180deg, rgba(255,255,255,0), rgba(0,0,0,0.5))")
+    });
+    $('#gnb li.depth1-5 a').mouseenter(function(){
         $(this).css("border-bottom", "3px solid white");
     });
     $('#gnb div.gnb-depth2 ul').mouseenter(function(){
         $(this).stop().slideDown();
         $(this).parent().siblings().css("border-bottom", "3px solid white");
+        $('#gnb div.gnb-depth2').css("background", "linear-gradient(180deg, rgba(255,255,255,0), rgba(0,0,0,0.5))")
     });
     $('#gnb>ul>li>a').mouseleave(function(){
         //$('div.gnb-depth2 ul').stop().slideUp();
         $(this).siblings().children("ul").stop().slideUp("fast");
         $(this).css("border-bottom", "none");
+        $('#gnb div.gnb-depth2').css("background", "none")
     });
     $('#gnb div.gnb-depth2 ul').mouseleave(function(){
         $(this).stop().slideUp();
         $(this).parent().siblings().css("border-bottom", "none");
+        $('#gnb div.gnb-depth2').css("background", "none")
     });
 
     //햄버거버튼 누르면 사이트맵 보이게 하기
@@ -164,18 +172,17 @@ $(document).ready(function(){
     }
 
     //혜택부분 슬라이더 애니메이션
-    setInterval(sliderLup, 2000);
+    setInterval(sliderLup, 3000);
+    let i = 0;
     function sliderLup() {
-        $("div.slider-imgL").stop().animate({top:"-100px"}, "slow", function(){
+        i++;
+        $("div.slider-imgL").stop().animate({top:"0px"}, "slow", function(){
             $(this).append($(this).children().first());
-            $(this).css("top", 0);
-        });/*이렇게 하면 작동은 잘 되긴 하는데 이미지가 animate되는 걸로 바꿔볼 예정 ==> 위에처럼 이미지가 올라오지 않음
-        //$("div.slider-imgL a").stop().animate({top:0}, "slow");
-        $("div.slider-imgL a").stop().animate({top:"100px"}, "slow", function(){
-            $(this).append($(this).siblings().first());
-            $(this).css("top", 0);
-        });*/
-        $("div.slider-imgR").stop().animate({left:"430px"}, "slow", function(){
+            $(this).css({"top":"200px"}, {'opacity':'0'});
+            $("div.page span").eq(i).addClass("on").siblings().removeClass("on");
+            if(i==2) {i = -1;} //i++;때문에 i=-1;로 할당해줌. i=0;하면 i가 1이 됨
+        });
+        $("div.slider-imgR").stop().animate({left:"500px"}, "slow", function(){
             $(this).append($(this).children().first());
             $(this).css("left", "330px");
         });
