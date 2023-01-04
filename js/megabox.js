@@ -176,9 +176,9 @@ $(document).ready(function(){
     let i = 0;
     function sliderLup() {
         i++;
-        $("div.slider-imgL").stop().animate({top:"0px"}, "slow", function(){
+        $("div.slider-imgL").stop().animate({top:"200px"}, "slow", function(){
             $(this).append($(this).children().first());
-            $(this).css({"top":"200px"}, {'opacity':'0'});
+            $(this).css({"top":"0px"}, {'opacity':'0'});
             $("div.page span").eq(i).addClass("on").siblings().removeClass("on");
             if(i==2) {i = -1;} //i++;때문에 i=-1;로 할당해줌. i=0;하면 i가 1이 됨
         });
