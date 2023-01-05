@@ -27,6 +27,7 @@ $(document).ready(function(){
         $('#gnb div.gnb-depth2').css("background", "none")
     });
 
+
     //햄버거버튼 누르면 사이트맵 보이게 하기
     $('div.link-area button.menu').click(function(){
         if( $('div.link-area button.menu').text() == 'menu' ) {
@@ -156,6 +157,7 @@ $(document).ready(function(){
 
     });
 
+    
     //박스오피스 포스터 이미지 mouseenter되면 요약부분 보이게 하기
     $('a.movie-list-info').mouseenter(function(){
         $(this).children('div.wrap').fadeIn("fast");
