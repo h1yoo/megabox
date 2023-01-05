@@ -915,7 +915,7 @@ div.search-link {
     overflow: hidden;
     height: 260px;
     left: 15px;
-    top: 200;
+    top: -10px;
     /*border: 2px solid rebeccapurple;*/
 }
 #main_section02 .slider-view .slider-cell .position .slider-imgL a {
@@ -931,7 +931,7 @@ div.search-link {
     position: absolute;
     width: 350px;
     height: 300px;
-    left:330px;
+    left:310px;
     top: 0;
     overflow: hidden;
     /*border: 2px solid green;*/
