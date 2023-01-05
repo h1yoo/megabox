@@ -51,6 +51,7 @@ $(document).ready(function(){
             $('div.link-area button').css({"background":"none", "color":"#888"});
         }
     });
+
     //검색아이콘 누르면 header_search 보이게 하기
     $('div.link-area button.search').click(function(){
         if( $('div.link-area button.search').text() == 'search' ) {
@@ -77,51 +78,52 @@ $(document).ready(function(){
         $("#header_search .btn").click(function(){
             $(this).parent().siblings().removeClass('on');
             $(this).parent().addClass('on');
-            $('#header_search ul>li:last-child').click(function(){
-                $('#header_search .list>ol:first-child').hide();
-                $('#header_search .list>ol:last-child').show();
-                $("#header_search .img img").attr("src", "https://img.megabox.co.kr/SharedImg/2022/05/23/oZfETtpEvKGpdY2JQo2Z6wFL0S4cpKy5_316.jpg");
-                //현재 img의 src를 오른쪽 주소로 변경
-            });
-            $('#header_search ul>li:first-child').click(function(){
-                $('#header_search .list>ol:last-child').hide();
-                $('#header_search .list>ol:first-child').show();
-                $("#header_search .img img").attr("src", "https://img.megabox.co.kr/SharedImg/2022/12/16/9vUySe7DNMro6tdYRPEbjzF2ebr48MwE_316.jpg");
-            });
-            /*첫 번째 ol의 각 li mouseenter됐을 때 이미지 바뀌게 하기*/
-            $('div.list > ol:first-child > li:nth-child(1) a').mouseenter(function(){
-                $('#header_search .img img').attr('src', 'https://img.megabox.co.kr/SharedImg/2022/12/16/9vUySe7DNMro6tdYRPEbjzF2ebr48MwE_316.jpg');
-            });
-            $('div.list > ol:first-child > li:nth-child(2) a').mouseenter(function(){
-                $('#header_search .img img').attr('src', 'https://img.megabox.co.kr/SharedImg/2022/10/27/ORrjuLOGuWgyZzrWIKug9X61ykfxBNov_316.jpg');
-            });
-            $('.rank-cont > .list > ol:first-child li:nth-child(3) a').mouseenter(function(){
-                $('#header_search .img img').attr('src', 'https://img.megabox.co.kr/SharedImg/2022/11/04/vRDxzQ7BT5UZJSCxjBXTtxdbKA7eYktj_316.jpg');
-            });
-            $('.rank-cont > .list > ol:first-child li:nth-child(4) a').mouseenter(function(){
-                $('#header_search .img img').attr('src', 'https://img.megabox.co.kr/SharedImg/2022/11/24/xFO8r2xbXzxoMD9iXbuKC1n5Bo79InhQ_316.jpg');
-            });
-            $('.rank-cont > .list > ol:first-child li:nth-child(5) a').mouseenter(function(){
-                $('#header_search .img img').attr('src', 'https://img.megabox.co.kr/SharedImg/2022/12/14/I4kjq9vKKc1dwn2OLIPE9RBTpV9LyWhp_316.jpg');
-            });
-            /*두 번째 ol의 각 li mouseenter됐을 때 이미지 바뀌게 하기*/
-            $('div.list > ol:last-child > li:nth-child(1) a').mouseenter(function(){
-                $('#header_search .img img').attr('src', 'https://img.megabox.co.kr/SharedImg/2022/05/23/oZfETtpEvKGpdY2JQo2Z6wFL0S4cpKy5_316.jpg');
-            });
-            $('div.list > ol:last-child > li:nth-child(2) a').mouseenter(function(){
-                $('#header_search .img img').attr('src', 'https://img.megabox.co.kr/SharedImg/2022/05/09/6zfAYe6IrZ8BWnruqEfafwakt5cUjWgX_316.jpg');
-            });
-            $('.rank-cont > .list > ol:last-child li:nth-child(3) a').mouseenter(function(){
-                $('#header_search .img img').attr('src', 'https://img.megabox.co.kr/SharedImg/2022/12/16/9vUySe7DNMro6tdYRPEbjzF2ebr48MwE_316.jpg');
-            });
-            $('.rank-cont > .list > ol:last-child li:nth-child(4) a').mouseenter(function(){
-                $('#header_search .img img').attr('src', 'https://img.megabox.co.kr/SharedImg/2022/11/24/xFO8r2xbXzxoMD9iXbuKC1n5Bo79InhQ_316.jpg');
-            });
-            $('.rank-cont > .list > ol:last-child li:nth-child(5) a').mouseenter(function(){
-                $('#header_search .img img').attr('src', 'https://img.megabox.co.kr/SharedImg/2022/06/17/UiVCdL9H7i6emWkAoFo6k0pWOx4UaxzD_316.jpg');
-            });
+        });
+        $('#header_search ul>li:last-child').click(function(){  //메가박스 관객순 눌렀을 때
+            $('#header_search .list>ol:first-child').hide();
+            $('#header_search .list>ol:last-child').show();
+            $("#header_search .img img").attr("src", "images/search2_city.jpg");
+            //현재 img의 src를 오른쪽 주소로 변경
+        });
+        $('#header_search ul>li:first-child').click(function(){  //예매율 순 눌렀을 때
+            $('#header_search .list>ol:last-child').hide();
+            $('#header_search .list>ol:first-child').show();
+            $("#header_search .img img").attr("src", "images/search1_avatar.jpg");
+        });
+        /*****첫 번째 ol의 각 li mouseenter됐을 때 이미지 바뀌게 하기*****/
+        $('div.list > ol:first-child > li:nth-child(1) a').mouseenter(function(){
+            $('#header_search .img img').attr('src', 'images/search1_avatar.jpg');
+        });
+        $('div.list > ol:first-child > li:nth-child(2) a').mouseenter(function(){
+            $('#header_search .img img').attr('src', 'images/search1_slamdunk.jpg');
+        });
+        $('div.list > ol:first-child li:nth-child(3) a').mouseenter(function(){
+            $('#header_search .img img').attr('src', 'images/search1_hero.jpg');
+        });
+        $('div.list > ol:first-child li:nth-child(4) a').mouseenter(function(){
+            $('#header_search .img img').attr('src', 'images/search1_cat.jpg');
+        });
+        $('div.list > ol:first-child li:nth-child(5) a').mouseenter(function(){
+            $('#header_search .img img').attr('src', 'images/search1_switch.jpg');
+        });
+        /*두 번째 ol의 각 li mouseenter됐을 때 이미지 바뀌게 하기*/
+        $('div.list > ol:last-child > li:nth-child(1) a').mouseenter(function(){
+            $('#header_search .img img').attr('src', 'images/search2_city.jpg');
+        });
+        $('div.list > ol:last-child > li:nth-child(2) a').mouseenter(function(){
+            $('#header_search .img img').attr('src', 'images/search2_avatar.jpg');
+        });
+        $('div.list > ol:last-child li:nth-child(3) a').mouseenter(function(){
+            $('#header_search .img img').attr('src', 'images/search2_topgun.jpg');
+        });
+        $('div.list > ol:last-child li:nth-child(4) a').mouseenter(function(){
+            $('#header_search .img img').attr('src', 'images/search2_bbammy.jpg');
+        });
+        $('div.list > ol:last-child li:nth-child(5) a').mouseenter(function(){
+            $('#header_search .img img').attr('src', 'images/search2_witch.jpg');
         });
     });  //검색 아이콘 눌렀을 때 끝
+    
     /////사람 아이콘 눌렀을 때 로그인 화면 보이게 하기
     $('div.link-area button.mypage').click(function(){
         if( $('div.link-area button.mypage').text() == 'person' ) {
