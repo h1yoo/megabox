@@ -187,11 +187,11 @@ header #gnb {
 /*상단 메뉴의 메뉴*/
 #gnb .gnb-depth2 {
     position: absolute;
-    /*width:100%;*/
-    width:110px;
-    margin:0 auto; /* width, margin 수정 - 2024.07*/
     height:45px;
     top: 45px;
+    /*width:100%;*/
+    width: fit-content;
+    padding: 0 20px;
 }
 /*#gnb .gnb-depth2:not(.seconddepth2) {
     display: none;
